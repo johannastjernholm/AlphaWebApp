@@ -116,7 +116,7 @@ body {
     border-radius: 16px;
 }
 
-header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -162,12 +162,7 @@ footer {
         padding: 2rem;
     }
 
-.main-header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-}
+
 
 /* typography */
 h1,
