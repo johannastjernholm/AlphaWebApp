@@ -3,6 +3,14 @@
     ViewData["Title"] = "Projects";
 }
 
-<h2>
-    @ViewData["Title"]
-</h2>
+
+
+<div class="main-header-container">
+    <h2>
+        @ViewData["Title"]
+    </h2>
+    <a asp-controller="Projects" asp-action="Create" class="btn btn-blue">
+        <i class="bi bi-plus-lg"></i>
+        Add Project
+    </a>
+</div>
