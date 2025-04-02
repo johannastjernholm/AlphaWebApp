@@ -1,6 +1,6 @@
 ﻿namespace AlphaWebApp.Models;
 
-public class Project
+public class ProjectViewModel
 {
     public int Id { get; set; }
 
