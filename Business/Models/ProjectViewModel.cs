@@ -1,4 +1,4 @@
-﻿namespace AlphaWebApp.Models;
+﻿namespace AlphaWebApp.Business.Models;
 
 public class ProjectViewModel
 {
