@@ -1,4 +1,4 @@
-﻿using AlphaWebApp.Business.Models;
+﻿using Business.Models;
 using Business.Factories;
 using Data.Contexts;
 using Microsoft.EntityFrameworkCore;

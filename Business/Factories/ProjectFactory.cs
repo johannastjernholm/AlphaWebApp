@@ -1,5 +1,5 @@
-﻿using Data.Entities;
-using AlphaWebApp.Business.Models;
+﻿using Business.Models;
+using Data.Entities;
 
 
 namespace Business.Factories;
