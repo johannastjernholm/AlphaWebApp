@@ -23,17 +23,17 @@ public class ProjectsController(AppDbContext context, ProjectFactory projectFact
     }
 
     [HttpPost("create")]
-    public async Task<IActionResult> Create(ProjectViewModel project)
+    public async Task<IActionResult> Create(ProjectViewModel projectViewModel)
     {
         if (ModelState.IsValid)
         {
-            var entity = _projectFactory.Create(project);
+            var entity = _projectFactory.Create(projectViewModel);
             _context.Projects.Add(entity);
 
             await _context.SaveChangesAsync();
             return RedirectToAction("Projects");
         }
-        return View(project);
+        return View(projectViewModel);
     }
 
 }
