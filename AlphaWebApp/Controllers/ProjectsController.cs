@@ -2,18 +2,22 @@
 using Business.Factories;
 using Data.Contexts;
 using Microsoft.AspNetCore.Mvc;
+using Business.Service;
+using System.Threading.Tasks;
 
 namespace AlphaWebApp.Controllers;
 [Route("projects")]
-public class ProjectsController(AppDbContext context, ProjectFactory projectFactory) : Controller
+public class ProjectsController(AppDbContext context, ProjectFactory projectFactory, ProjectService projectService) : Controller
 {
     private readonly AppDbContext _context = context;
     private readonly ProjectFactory _projectFactory = projectFactory;
+    private readonly ProjectService _projectService = projectService;
 
     [Route("")]
-    public IActionResult Projects()
+    public async Task<IActionResult> Projects()
     {
-        return View();
+        var projects = await _projectService.GetAllProjectsAsync();
+        return View(projects);
     }
 
     [HttpGet("create")]
