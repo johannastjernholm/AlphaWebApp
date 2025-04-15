@@ -6,28 +6,27 @@
     ViewData["Title"] = "Projects";
 }
 
-<div class="row row-cols-1 row-cols-md-3 g-5 mt-5">
+<div class="project-card-grid">
     @foreach (var project in Model)
     {
-        <div class="col">
-            <div class="surface h-100">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="">
-                        <img src="~/images/image-card-projects.svg" alt="Alternate Text" class="me-3" />
-                    </div>
-                    <div>
-                        <h5 class="mb-0">@project.ProjectName</h5>
-                        <small class="text-muted">@project.ClientName</small>
-                    </div>
+        <div class="surface">
+            <div class="project-card-header">
+                <div class="">
+                    <img src="~/images/image-card-projects.svg" alt="Alternate Text" />
                 </div>
-                <p>@project.Description</p>
-                <ul class="list-unstyled">
-                    <li><strong>Start:</strong> @project.StartDate.ToShortDateString()</li>
-                    <li><strong>End:</strong> @(project.EndDate?.ToShortDateString() ?? "-")</li>
-                    <li><strong>Budget:</strong> @project.Budget.ToString("C0")</li>
-                    <li><strong>Status:</strong> @project.Status</li>
-                </ul>
+                <div class="">
+                    <h5 class="mb-0">@project.ProjectName</h5>
+                    <small class="text-muted">@project.ClientName</small>
+                </div>
             </div>
+            <p class="mb-5">@project.Description</p>
+            @* <ul class="list-unstyled"> *@
+            @*     <li><strong>Start:</strong> @project.StartDate.ToShortDateString()</li> *@
+            @*     <li><strong>End:</strong> @(project.EndDate?.ToShortDateString() ?? "-")</li> *@
+            @*     <li><strong>Budget:</strong> @project.Budget.ToString("C0")</li> *@
+            @*     <li><strong>Status:</strong> @project.Status</li> *@
+            @* </ul> *@
+
         </div>
     }
 </div>
