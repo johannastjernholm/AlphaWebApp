@@ -163,6 +163,28 @@ footer {
         padding: 2rem;
     }
 
+/*Status navigation*/
+.status-container {
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 1rem;
+}
+.status-links {
+    display: flex;
+    gap: 1rem;
+}
+.status-link {
+    color: var(--body-light-color);
+    text-transform: uppercase;
+    font-size: small;
+    font-weight: var(--font-bold);
+}
+.status-link.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+
+ /*Cards*/
 .project-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
