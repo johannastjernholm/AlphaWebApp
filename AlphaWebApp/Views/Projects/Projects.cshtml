@@ -4,7 +4,41 @@
    
     Layout = "_PortalLayout";
     ViewData["Title"] = "Projects";
+
+    string currentFilter = ViewBag.Filter as string ?? "All";
 }
+
+
+
+<div class="status-links">
+    <a asp-controller="Projects"
+       asp-action="Projects"
+       class="status-link @(currentFilter == "All" ? "active" : "")">
+        ALL
+    </a>
+
+    <a asp-controller="Projects"
+       asp-action="Filter"
+       asp-route-status="In Progress"
+       class="status-link @(currentFilter == "In Progress" ? "active" : "")">
+        STARTED
+    </a>
+
+    <a asp-controller="Projects"
+       asp-action="Filter"
+       asp-route-status="Completed"
+       class="status-link @(currentFilter == "Completed" ? "active" : "")">
+        COMPLETED
+    </a>
+</div>
+
+@* <div class="status-container"> *@
+@*     <nav class=" status-links mb-3"> *@
+@*         <a class="status-link" @(ViewBag.Filter == null ? "active" : "") href="/projects">All</a> *@
+@*         <a class="status-link" @(ViewBag.Filter == "Started" ? "active" : "") href="/projects?filter=Started">Started</a> *@
+@*         <a class="status-link" @(ViewBag.Filter == "Completed" ? "active" : "") href="/projects?filter=Completed">Completed</a> *@
+@*     </nav> *@
+@* </div> *@
 
 <div class="project-card-grid">
     @foreach (var project in Model)
