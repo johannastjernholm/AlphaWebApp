@@ -38,4 +38,19 @@ public class ProjectService
 
         return projects.Select(p => _factory.Create(p)).ToList();
     }
+    /// <summary>
+    /// Hämta alla projekt per status på projektet(status:not started, in progress, completed)
+    /// </summary>
+   
+    public async Task<List<ProjectViewModel>> GetProjectsByStatusAsync(string status)
+    {
+        var projects = await _context.Projects
+            .Where(p => p.Status == status)
+            .ToListAsync();
+
+        return projects
+            .Select(p => _factory.Create(p))
+            .ToList();
+    }
+
 }

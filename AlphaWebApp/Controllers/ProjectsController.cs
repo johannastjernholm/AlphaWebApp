@@ -16,9 +16,19 @@ public class ProjectsController(AppDbContext context, ProjectFactory projectFact
     [Route("")]
     public async Task<IActionResult> Projects()
     {
+        ViewBag.Filter = "All";
         var projects = await _projectService.GetAllProjectsAsync();
         return View(projects);
     }
+
+    [HttpGet("filter")]
+    public async Task<IActionResult> Filter(string status)
+    {
+        var filteredProjects = await _projectService.GetProjectsByStatusAsync(status);
+        ViewBag.Filter = status;
+        return View("Projects", filteredProjects);
+    }
+
 
     [HttpGet("create")]
     public IActionResult Create()
