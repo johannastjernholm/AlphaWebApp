@@ -53,3 +53,21 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector("form").addEventListener("submit", () => {
     console.log("formuläret försöker skickas");
 });
+
+
+// Rediger projekt
+function toggleMenu(button) {
+    const menu = button.nextElementSibling;
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+
+    // Stäng andra öppna menyer
+    document.querySelectorAll(".menu-options").forEach(m => {
+        if (m !== menu) m.style.display = "none";
+    });
+}
+
+document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+        document.querySelectorAll(".menu-options").forEach(m => m.style.display = "none");
+    }
+});
