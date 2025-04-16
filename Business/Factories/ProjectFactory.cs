@@ -26,6 +26,7 @@ public class ProjectFactory
     {
         return new ProjectViewModel
         {
+            Id = entity.Id,
             ProjectName = entity.ProjectName,
             ClientName = entity.ClientName,
             Description = entity.Description,
