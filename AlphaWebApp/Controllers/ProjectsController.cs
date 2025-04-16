@@ -36,6 +36,17 @@ public class ProjectsController(AppDbContext context, ProjectFactory projectFact
         return View();
     }
 
+    [HttpGet("edit/{id}")]
+    public async Task<IActionResult> Edit(int id)
+    {
+        var project = await _projectService.GetProjectsByIdAsync(id);
+        if (project == null)
+        {
+            return NotFound();
+        }
+        return View(project);
+    }
+
     [HttpPost("create")]
     public async Task<IActionResult> Create(ProjectViewModel projectViewModel)
     {

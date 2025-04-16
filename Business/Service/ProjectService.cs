@@ -40,8 +40,7 @@ public class ProjectService
     }
     /// <summary>
     /// Hämta alla projekt per status på projektet(status:not started, in progress, completed)
-    /// </summary>
-   
+    /// </summary
     public async Task<List<ProjectViewModel>> GetProjectsByStatusAsync(string status)
     {
         var projects = await _context.Projects
@@ -53,4 +52,17 @@ public class ProjectService
             .ToList();
     }
 
+    /// <summary>
+    /// Hämta projekt med id
+    /// </summary>
+    public async Task<ProjectViewModel?> GetProjectsByIdAsync(int id)
+    {
+        var entity = await _context.Projects.FirstOrDefaultAsync(p => p.Id == id);
+        if (entity == null)
+        {
+            return null;
+        }
+        return _factory.Create(entity);
+
+    }
 }
