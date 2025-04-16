@@ -213,7 +213,58 @@ footer {
     align-items: center;
     gap: 2rem;
     margin-bottom: 1rem;
+    position: relative
 }
+
+.dropdown {
+    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+   
+}
+
+.menu-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    background-color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    min-width: 150px;
+}
+
+    .menu-options a,
+    .menu-options button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        text-decoration: none;
+        background: none;
+        border: none;
+        font-size: 0.8rem;
+    }
+
+        
+
+.delete-btn {
+    color: var(--orange-color);
+}
+
+/*.edit-link {
+    color: var(--body-light-color);
+    position: absolute;
+    right: 5px;
+    top: 0;
+}*/
 
 
 /* typography */

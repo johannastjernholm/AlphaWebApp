@@ -1,4 +1,5 @@
 ﻿@model Business.Models.ProjectViewModel
+
 <div class="surface">
     <div class="project-card-header">
         <div class="">
@@ -8,6 +9,24 @@
             <h5 class="mb-0">@Model.ProjectName</h5>
             <small class="text-muted">@Model.ClientName</small>
         </div>
+
+        <div class="edit dropdown">
+            <button class="menu-btn" onclick="toggleMenu(this)">
+                <i class="fa-solid fa-ellipsis"></i>
+            </button>
+            <div class="menu-options">
+                <a asp-controller="Projects" asp-action="Edit" asp-route-id="@Model.Id">
+                    <i class="fa-solid fa-pen"></i> Edit
+                </a>
+                <form method="post" asp-controller="Projects" asp-action="Delete" asp-route-id="@Model.Id" onsubmit="return confirm('Are you sure you want to delete this project?');">
+                    <button type="submit" class="delete-btn">
+                        <i class="fa-solid fa-trash"></i> Delete 
+                    </button>
+                </form>
+            </div>
+        </div>
+        <p style="font-size: 0.8rem; color: gray;">Project ID: @Model.Id</p>
+
     </div>
     <p class="mb-5">@Model.Description</p>
     @* <ul class="list-unstyled"> *@
