@@ -1,0 +1,8 @@
+﻿@model Business.Models.ProjectViewModel
+
+@{
+    Layout = "_PortalLayout";
+    ViewData["FormAction"] = "Edit";
+    ViewData["Title"] = "Edit Project";
+}
+@await Html.PartialAsync("~/Views/Shared/Partials/Forms/_ProjectForm.cshtml", Model)
