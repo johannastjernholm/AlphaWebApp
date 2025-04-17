@@ -62,4 +62,14 @@ public class ProjectsController(AppDbContext context, ProjectFactory projectFact
         return View(projectViewModel);
     }
 
+    [HttpPost("edit/{id}")]
+    public async Task<IActionResult> Edit(int id, ProjectViewModel projectViewModel)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(projectViewModel);
+        }
+        await _projectService.UpdateProjectAsync(id, projectViewModel);
+        return RedirectToAction("Projects");
+    }
 }
