@@ -72,4 +72,12 @@ public class ProjectsController(AppDbContext context, ProjectFactory projectFact
         await _projectService.UpdateProjectAsync(id, projectViewModel);
         return RedirectToAction("Projects");
     }
+
+
+    [HttpPost("delete/{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+       await _projectService.DeleteProjectAsync(id);
+        return RedirectToAction("Projects");
+    }
 }

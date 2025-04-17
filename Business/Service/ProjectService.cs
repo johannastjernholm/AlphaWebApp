@@ -87,4 +87,15 @@ public class ProjectService
 
         await _context.SaveChangesAsync();
     }
+
+    public async Task DeleteProjectAsync(int id)
+    {
+        var entity = await _context.Projects.FirstOrDefaultAsync(p => p.Id == id);
+        if (entity == null)
+        {
+            return;
+        }
+        _context.Projects.Remove(entity);
+        await _context.SaveChangesAsync();
+    }
 }
