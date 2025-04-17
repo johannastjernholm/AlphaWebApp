@@ -65,4 +65,26 @@ public class ProjectService
         return _factory.Create(entity);
 
     }
+    /// <summary>
+    /// Uppdatera ett befintligt projekt(på id)
+    /// </summary>
+    
+    public async Task UpdateProjectAsync(int id, ProjectViewModel projectViewModel)
+    {
+        var entity = await _context.Projects.FirstOrDefaultAsync(p => p.Id == id);
+        if(entity == null)
+        {
+            return;
+        }
+
+        entity.ProjectName = projectViewModel.ProjectName;
+        entity.ClientName = projectViewModel.ClientName;
+        entity.Description = projectViewModel.Description;
+        entity.StartDate = projectViewModel.StartDate!.Value;
+        entity.EndDate = projectViewModel.EndDate;
+        entity.Budget = projectViewModel.Budget;
+        entity.Status = projectViewModel.Status;
+
+        await _context.SaveChangesAsync();
+    }
 }
