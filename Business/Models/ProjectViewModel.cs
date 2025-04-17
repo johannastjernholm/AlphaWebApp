@@ -16,7 +16,7 @@ public class ProjectViewModel
     public string Description { get; set; } = null!;
 
     [Required(ErrorMessage = "Start date is required.")]
-    public DateTime StartDate { get; set; }
+    public DateTime? StartDate { get; set; }
     public DateTime? EndDate { get; set; }
 
     [Range(0.1, double.MaxValue, ErrorMessage ="Budget must be greater than 0.")]
