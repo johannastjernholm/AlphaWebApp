@@ -33,7 +33,7 @@ public class ProjectsController(AppDbContext context, ProjectFactory projectFact
     [HttpGet("create")]
     public IActionResult Create()
     {
-        return View();
+        return View(new ProjectViewModel());
     }
 
     [HttpGet("edit/{id}")]
@@ -58,6 +58,7 @@ public class ProjectsController(AppDbContext context, ProjectFactory projectFact
             await _context.SaveChangesAsync();
             return RedirectToAction("Projects");
         }
+
         return View(projectViewModel);
     }
 
