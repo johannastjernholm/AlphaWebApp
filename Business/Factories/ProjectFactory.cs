@@ -15,7 +15,7 @@ public class ProjectFactory
             ProjectName = model.ProjectName,
             ClientName = model.ClientName,
             Description = model.Description,
-            StartDate = model.StartDate,
+            StartDate = model.StartDate!.Value,
             EndDate = model.EndDate,
             Budget = model.Budget,
             Status = model.Status
