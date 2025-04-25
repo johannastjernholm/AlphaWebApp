@@ -2,6 +2,8 @@ using Data.Contexts;
 using Business.Factories;
 using Microsoft.EntityFrameworkCore;
 using Business.Service;
+using Data.Entities;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,12 @@ builder.Services.AddScoped<ProjectService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+})
+    .AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
 app.UseHsts();
