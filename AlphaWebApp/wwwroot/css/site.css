@@ -152,11 +152,15 @@ footer {
         grid-area: top;
         border-bottom: 1px solid var(--border-300);
         padding: 1rem 2rem;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 7rem;
         align-items: center;
+        text-decoration: none;
+        display: flex;
+        gap: 1.5rem;
+        justify-content: flex-end;
     }
+.top a {
+    text-decoration: none;
+}
 
     .portal > .main {
         grid-area: main;
@@ -402,6 +406,9 @@ h6 {
             background-color: var(--navlink-background-active-color);
         }
 
+
+
+
 /* sections */
 
 /* views/pages */
@@ -410,6 +417,7 @@ h6 {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .circle {
