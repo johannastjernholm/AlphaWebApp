@@ -27,7 +27,8 @@ public class AuthController(UserManager<ApplicationUser> userManager, SignInMana
         var user = new ApplicationUser
         {
             UserName = registerViewModel.Email,
-            Email = registerViewModel.Email
+            Email = registerViewModel.Email,
+            FullName = registerViewModel.FullName
         };
 
         var result = await _userManager.CreateAsync(user, registerViewModel.Password);
@@ -71,7 +72,13 @@ public class AuthController(UserManager<ApplicationUser> userManager, SignInMana
 
         return View(loginViewModel);
     }
+    [HttpPost("logout")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Logout()
+    {
+        Console.WriteLine("LOGOUT METHOD REACHED!");
 
-
-    //TODO: Fixa log out
+        await _signInManager.SignOutAsync();
+        return RedirectToAction("Login");
+    }
 }
