@@ -4,8 +4,10 @@ using Data.Contexts;
 using Microsoft.AspNetCore.Mvc;
 using Business.Service;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AlphaWebApp.Controllers;
+[Authorize]
 [Route("projects")]
 public class ProjectsController(AppDbContext context, ProjectFactory projectFactory, ProjectService projectService) : Controller
 {
