@@ -1,9 +1,28 @@
-﻿
+﻿@using Data.Entities
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
 
-        <a href="/settings">
-            <i class="fa-duotone fa-solid fa-gear"></i>
-        </a>
-        <a href="/profile">
-            <img src="~/images/profile-pic.svg" alt="Alternate Text" />
-        </a>
-   
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+
+<div class="dropdown d-flex gap-3" style="position: relative;">
+    <button type="button" class="menu-btn" onclick="toggleSettingsMenu(this)">
+        <i class="fa-solid fa-gear"></i>
+    </button>
+
+    <div class="settings-menu">
+        <div class="d-flex align-items-center gap-2 mb-2">
+            <img src="~/images/profile-pic.svg" class="rounded-circle" />
+            <span style="color: black">@user?.Email</span>
+        </div>
+
+        <form method="post" asp-controller="Auth" asp-action="Logout" id="logoutForm" novalidate>
+            @Html.AntiForgeryToken()
+            <button type="button" onclick="document.getElementById('logoutForm').submit()">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </button>
+        </form>
+    </div>
+    <img src="~/images/profile-pic.svg" class="rounded-circle" />
+</div>

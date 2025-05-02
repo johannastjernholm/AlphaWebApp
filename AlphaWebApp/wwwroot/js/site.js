@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // TODO: Skickas det eller låser validate formuläret?
-document.querySelector("form").addEventListener("submit", () => {
-    console.log("formuläret försöker skickas");
+document.querySelector("#projectForm")?.addEventListener("submit", () => {
+    console.log("Projektformuläret försöker skickas");
 });
 
 
@@ -71,3 +71,38 @@ document.addEventListener("click", function (e) {
         document.querySelectorAll(".menu-options").forEach(m => m.style.display = "none");
     }
 });
+
+
+//function toggleSettingsMenu(button) {
+//    const menu = button.nextElementSibling;
+//    menu.style.display = menu.style.display === "block" ? "none" : "block";
+
+//    document.querySelectorAll(".settings-menu").forEach(m => {
+//        if (m !== menu) m.style.display = "none";
+//    });
+//}
+
+function toggleSettingsMenu(button) {
+    const menu = button.nextElementSibling;
+    if (menu) {
+        const isVisible = menu.style.display === "block";
+        menu.style.display = isVisible ? "none" : "block";
+    }
+}
+
+document.addEventListener("click", function (e) {
+    const isInsideMenu = e.target.closest(".dropdown");
+
+    if (!isInsideMenu) {
+        document.querySelectorAll(".settings-menu").forEach(menu => {
+            menu.style.display = "none";
+        });
+    }
+});
+
+const logoutForm = document.getElementById("logoutForm");
+if (logoutForm) {
+    logoutForm.addEventListener("submit", (event) => {
+        console.log("Logout-form skickas!");
+    });
+}
