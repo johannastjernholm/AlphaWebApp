@@ -2,7 +2,7 @@
 
 @{
 }
-<form asp-action="@ViewData["FormAction"]" asp-route-id="@Model.Id" novalidate method="post">
+<form id="projectForm" asp-action="@ViewData["FormAction"]" asp-route-id="@Model.Id" novalidate method="post">
     <input type="hidden" asp-for="Id" />
     <div class="mb-3">
         <label asp-for="ProjectName" class="form-label">Project Name</label>
