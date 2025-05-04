@@ -2,7 +2,7 @@
 using Data.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
+// Kod skriven i samarbete med AI
 namespace Data.Contexts;
 
 

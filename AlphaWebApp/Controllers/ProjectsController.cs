@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Business.Service;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-
+//Koden skriven i samarbete med AI
 namespace AlphaWebApp.Controllers;
 [Authorize]
 [Route("projects")]

@@ -2,7 +2,7 @@
 using Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
+//Koden skriven i samarbete med AI
 namespace AlphaWebApp.Controllers;
 
 [Route("auth")]

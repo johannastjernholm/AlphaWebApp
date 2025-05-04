@@ -1,4 +1,6 @@
-﻿//Validera form
+﻿//Kod skriven i samarbete med AI
+
+//Validera formulär med just validate 
 document.addEventListener("DOMContentLoaded", function () {
     const validator = new JustValidate("form");
 

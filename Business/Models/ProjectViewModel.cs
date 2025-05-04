@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+//Koden skriven i samarbete med AI
 namespace Business.Models;
 
 public class ProjectViewModel

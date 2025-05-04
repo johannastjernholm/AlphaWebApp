@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Koden skriven i samarbete med AI
 namespace Business.Models;
 
 public class LoginViewModel

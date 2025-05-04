@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+//Kod skriven i samarbete med AI
 namespace Business.Models;
 
 public class RegisterViewModel

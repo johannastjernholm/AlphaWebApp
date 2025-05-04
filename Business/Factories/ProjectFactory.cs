@@ -1,6 +1,6 @@
 ﻿using Business.Models;
 using Data.Entities;
-
+//Kod skriven i samarbete med AI
 
 namespace Business.Factories;
 

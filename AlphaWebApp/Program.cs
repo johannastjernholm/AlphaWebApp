@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Business.Service;
 using Data.Entities;
 using Microsoft.AspNetCore.Identity;
-
+//Kod skriven i samarbete med AI
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
